@@ -1,15 +1,52 @@
 class makeBlinkyDancer extends makeDancer {
-  constructor(top, left, timeBetweenSteps, oldStep, step) {
-    super(top, left, timeBetweenSteps, oldStep);
+  constructor(top, left, timeBetweenSteps, step) {
+    super(top, left, timeBetweenSteps);
 
   }
   step() {
-    this.oldStep();
+    super.step();
     this.$node.toggle();
   }
 
-
+  // LOOK UP CLASS INHERITANCE IN ES6 TO FIX LINE 7
 }
+
+
+
+// Psuedoclassical BEGIN
+// var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
+//   makeDancer.call(this, top, left, timeBetweenSteps);
+//   this.oldStep = this.step;
+// };
+
+// makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
+// makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
+
+// blinkyDancer.prototype.step = function() {
+//   this.oldStep();
+//   this.$node.toggle();
+// };
+// // Psuedoclassical END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // makeDancer.call(this, top, left, timeBetweenSteps);
   // var blinkyDancer = makeDancer(top, left, timeBetweenSteps);
 

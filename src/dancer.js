@@ -15,18 +15,18 @@ class makeDancer {
 
   // use jQuery to create an HTML <span> tag
   this.$node = $('<span class="dancer"></span>');
-  this.oldStep();
+  this.step();
   this.setPosition(top, left);
   }
 
   // methods
-  oldStep() {
+  step() {
     // the basic dancer doesn't do anything interesting at all on each step,
     // it just schedules the next step
 
     // Set at timeout for certain times per second for the new step function
     // How do I call oldStep below
-    setTimeout(this.oldStep.bind(this), this.timeBetweenSteps);
+    setTimeout(this.step.bind(this), this.timeBetweenSteps);
   }
 
   // step.bind(this)
@@ -50,6 +50,43 @@ class makeDancer {
 
 // Invocation
 // var test = new makeDancer();
+
+
+
+// Psuedoclassical BEGIN
+// var makeDancer = function(top, left, timeBetweenSteps) {
+//   this.top = top;
+//   this.left = left;
+//   this.timeBetweenSteps;
+
+//   this.$node = $('<span class="dancer"></span>');
+//   this.step.bind(this);
+//   this.setPosition.bind(this, top, left);
+// };
+
+// makeDancer.prototype.setPosition = function(top, left) {
+//   var styleSettings = {
+//     top: top,
+//     left: left
+//   };
+//   this.$node.css(styleSettings);
+// };
+
+// makeDancer.prototype.step = function() {
+//   setTimeout(this.step.bind(this), this.timeBetweenSteps);
+// };
+// Psuedoclassical END
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* OLD VERSION
