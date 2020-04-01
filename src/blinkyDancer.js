@@ -7,8 +7,6 @@ class makeBlinkyDancer extends makeDancer {
     super.step();
     this.$node.toggle();
   }
-
-  // LOOK UP CLASS INHERITANCE IN ES6 TO FIX LINE 7
 }
 
 
